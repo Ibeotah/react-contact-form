@@ -1,0 +1,157 @@
+:root {
+  --clr-body-bg: hsl(148, 38%, 91%);
+  --clr-form-bg: hsl(0, 0%, 100%);
+  --clr-submit: hsl(169, 82%, 27%);
+  --clr-submit-deep: #055749;
+  --clr-text-main: hsl(187, 24%, 22%);
+  --clr-text-muted: hsl(186, 15%, 59%);
+  --clr-error: hsl(0, 66%, 54%);
+  --clr-label: hsl(187, 24%, 22%);
+  --clr-bdr: rgb(217, 217, 217);
+
+  /* font */
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /* font family */
+
+  --fw-fam: "Karla", sans-serif;
+}
+
+body {
+  margin: 0px;
+  padding: 32px 16px;
+  background-color: hsl(148, 38%, 91%);
+}
+h1,
+h2,
+h4,
+h3,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+html {
+  box-sizing: border-box;
+}
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  font-family: var(--fw-fam);
+}
+.form,
+.custom-radio-button {
+  background-color: var(--clr-form-bg);
+}
+.form {
+  padding: 24px;
+  border-radius: 16px;
+}
+.contact {
+  color: var(--clr-text-main);
+}
+
+.form-label,
+.custom-radio-button,
+.custom-consent-checkbox {
+  color: var(--clr-label);
+  font-weight: var(--fw-medium);
+}
+.form-item-input {
+  display: flex;
+  flex-direction: column;
+}
+.input,
+.custom-radio-button {
+  height: 48px;
+}
+.input {
+  border: 1px solid var(--clr-label);
+}
+/* Target the required label wrapper */
+.ant-form-item-required {
+  flex-direction: row-reverse !important;
+  align-items: center;
+  gap: 4px;
+}
+
+.ant-form-item-required::before {
+  margin-inline-end: 0 !important;
+  margin-inline-start: 4px !important;
+  color: var(--clr-submit) !important;
+}
+.asterisk {
+  color: var(--clr-submit);
+}
+.ant-form-item-label > label::after {
+  display: none;
+}
+.query-radio-group,
+.custom-radio-button {
+  width: 100%;
+}
+.query-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.custom-radio-button {
+  border: 1px solid var(--clr-label);
+  border-radius: 8px;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding-left: 24px;
+}
+.submit-btn {
+  background-color: var(--clr-submit);
+  height: 48px;
+}
+.submit-btn:hover {
+  background-color: var(--clr-submit-deep) !important;
+}
+.submit-btn:disabled,
+.submit-btn[disabled],
+.submit-btn.ant-btn-disabled {
+  background-color: var(--clr-submit);
+  color: #ffffff !important;
+  opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 64px 128px;
+  }
+  .form {
+    padding: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    padding-block: 96px;
+  }
+  .form-item-input,
+  .query-radio-group {
+    display: grid;
+    /* Creates 2 equal columns */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px
+  }
+
+  /* Target the 3rd item (the Email Address block) */
+  .form-item-input > :nth-child(3) {
+    /* Forces it to stretch across both columns */
+    grid-column: span 2;
+    margin-top: -16px;
+  }
+}
+
+@media (min-width: 1280px) {
+  body {
+    padding-inline: 256px;
+  }
+}
