@@ -37,7 +37,6 @@ const Captcha = forwardRef<CaptchaRef, CaptchaProps>(
           }
           return null;
         } catch (error) {
-         
           toast.warn(
             "Automated security check failed. Please verify using the checkbox below.",
           );

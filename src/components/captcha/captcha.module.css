@@ -1,5 +1,27 @@
-container {
+.container {
   display: flex;
   align-self: center;
-  width: fit-content;
+  transform: scale(0.78); /* Scales it down to ~258px width */
+  margin-left: -28px;
+  margin-right: -24px;
+  margin-bottom: 24px;
+}
+@media (min-width: 360px) {
+  .container {
+    margin-inline: 0;
+    transform: scale(0.9);
+    margin-left: -12px;
+  }
+}
+@media (min-width: 375px) {
+  .container {
+    transform: scale(0.95);
+    margin-left: -6px;
+  }
+}
+@media (min-width: 390px) {
+  .container {
+    transform: initial;
+    margin-inline: 0;
+  }
 }
